@@ -6,9 +6,9 @@
 <h3>Add a New Hair Stylist</h3>
 <br>
 <!-- NewStylist Form -->
-<form action="/newstylist" method="post" class="form-inline">
+<form action="/stylists" method="post" class="form-inline">
 	<div class="form-group">
-		<input id="stylistName" name="stylistName" type="text" class="form-control" placeholder="Name of Stylist">
+		<input id="stylistname" name="stylistname" type="text" class="form-control" placeholder="Name of Stylist">
 		<button type="submit" class="btn btn-primary">Add Your First Stylist</button>
 	</div>
 </form>
@@ -17,9 +17,9 @@
 <h3>Add a Stylist</h3>
 <hr>
 <!-- Preexisting Stylist Form -->
-<form action="/newstylist" method="post" class="form-inline">
+<form action="/stylists" method="post" class="form-inline">
 	<div class="form-group">
-		<input id="stylistName" name="stylistName" type="text" class="form-control" placeholder="Name of Stylist">
+		<input id="stylistname" name="stylistname" type="text" class="form-control" placeholder="Name of Stylist">
 		<button type="submit" class="btn btn-primary">Add Stylist</button>
 	</div>
 </form>
@@ -28,7 +28,7 @@
 <h3>Add a Client</h3>
 <hr>
 <!-- Form to Add a Client Under a Stylist -->
-<form action="newclient" method="post" class="form-inline">
+<form action="/newclient" method="post" class="form-inline">
 	<div class="form-group">
 	<label for="stylistid">Select your Stylist</label>
 	<select id="stylistid" name="stylistid" type="text">
@@ -59,11 +59,4 @@
 #end
 </ul>
 
-<!-- <h3>List Of Clients</h3>
-<hr>
-<ul>
-#foreach ($client in $clients)
-<li><a href="/client/$client.getId()">$client.getClientName()</a></li>
-#end
-</ul> -->
 #end
