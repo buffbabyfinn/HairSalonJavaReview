@@ -52,23 +52,15 @@ public class StylistTest {
 		assertTrue(myStylist.equals(savedStylist));
 	}
 
-	// //implement a test for the getClients method
-	// @Test
-	// public void getClients_returnsListOfClients_true(){
-  //
-	// 	//create a cuisine object
-	// 	Stylist myStylist = new Stylist("Northern Indian");
-	// 	//save the cuisine object
-	// 	myStylist.save();
-  //
-	// 	Client firstClient = new Client("Bollywood Theatre", "111-111-1111", "Portland, OR", myStylist.getId());
-  // 		Client secondClient = new Client("Natural Selection", "999-999-9999", "Portland, OR", myStylist.getId());
-  //
-	// 	//save first restaurant object
-	// 	firstClient.save();
-	// 	//save second restaurant object
-	// 	secondClient.save();
-  //
-	// 	assertEquals(myStylist.getClients().size(), 2);
-	// }
+	@Test
+	public void getClients_returnsListOfClients_true(){
+		Stylist myStylist = new Stylist("Brittany Stylist");
+		myStylist.save();
+
+		Client firstClient = new Client(myStylist.getId(), "Sabrina Balabuszko", "815-404-4500", "SBadass@gmail.com");
+  	Client secondClient = new Client(myStylist.getId(), "Client McClienty", "555-555-5555", "sbemail@homestarrunner.com");
+		firstClient.save();
+		secondClient.save();
+		assertEquals(myStylist.getClients().size(), 2);
+	}
 }
