@@ -9,24 +9,24 @@
 <form action="/stylists" method="post" class="form-inline">
 	<div class="form-group">
 		<input id="stylistname" name="stylistname" type="text" class="form-control" placeholder="Name of Stylist">
-		<button type="submit" class="btn btn-primary">Add Your First Stylist</button>
+		<button id="stylistBtn" type="submit" class="btn btn-primary">Add Your First Stylist</button>
 	</div>
 </form>
 
 #else
 <h3>Add a Stylist</h3>
-<hr>
+<br>
 <!-- Preexisting Stylist Form -->
 <form action="/stylists" method="post" class="form-inline">
 	<div class="form-group">
 		<input id="stylistname" name="stylistname" type="text" class="form-control" placeholder="Name of Stylist">
-		<button type="submit" class="btn btn-primary">Add Stylist</button>
+		<button id="stylistBtn" type="submit" class="btn btn-primary">Add Stylist</button>
 	</div>
 </form>
 
 <!-- Client Stuff -->
 <h3>Add a Client</h3>
-<hr>
+<br>
 <!-- Form to Add a Client Under a Stylist -->
 <form action="/newclient" method="post" class="form-inline">
 	<div class="form-group">
@@ -46,7 +46,7 @@
 	<input id="email" name="email" type="text" class="form-control" placeholder="Email">
 	</div>
 
-<button type="submit" class="btn btn-info">Add Client</button>
+<button id="clientBtn" type="submit" class="btn btn-info">Add Client</button>
 </form>
 
 

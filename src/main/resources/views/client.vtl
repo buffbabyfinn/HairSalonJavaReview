@@ -1,4 +1,4 @@
-<h1>$client.getName()</h1>
+<h1>$client.getClientName()</h1>
 <br>
 <h4>Information</h4>
 <p><strong>Phone:</strong> $client.getPhone()</p>
@@ -9,9 +9,10 @@
 <br>
 <br>
 <form class="form-inline" action="/client/$client.getId()/update" method="post">
+  <input id="clientname" name="clientname" type="text" class="form-control" placeholder="Name">
   <button type="submit" class="btn btn-warning">Edit this Client's Name</button>
 </form>
-
-<form class="form-inline" action="/restaurant/$restaurant.getId()/delete" method="post">
+<br>
+<form class="form-inline" action="/client/$client.getId()/delete" method="post">
   <button type="submit" class="btn btn-danger">Delete this Client</button>
 </form>
