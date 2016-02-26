@@ -1,0 +1,14 @@
+<h1>$stylist.getName()</h1>
+<h3>List of $stylist.getName()'s Clients:</h3>
+
+<ul>
+#foreach($client in $stylist.getClients())
+ <li><a href="/client/$client.getId()"><h4>$client.getClientName()</h4></a></li>
+  <ul>
+    <li>$client.getPhone()</li>
+    <li>$client.getEmail()</li>
+  </ul>
+#end
+</ul>
+
+<a href="/"><button class="btn btn-success">Return to Main Page</button></a>

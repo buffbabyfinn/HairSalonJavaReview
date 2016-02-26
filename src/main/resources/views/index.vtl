@@ -1,0 +1,69 @@
+<h1> Hair Salon </h1>
+
+<!-- Stylist Stuff -->
+#if ($stylists.size()==0)
+<h5>You don't have any stylists working yet!</h5>
+<h3>Add a New Hair Stylist</h3>
+<br>
+<!-- NewStylist Form -->
+<form action="/newstylist" method="post" class="form-inline">
+	<div class="form-group">
+		<input id="stylistName" name="stylistName" type="text" class="form-control" placeholder="Name of Stylist">
+		<button type="submit" class="btn btn-primary">Add Your First Stylist</button>
+	</div>
+</form>
+
+#else
+<h3>Add a Stylist</h3>
+<hr>
+<!-- Preexisting Stylist Form -->
+<form action="/newstylist" method="post" class="form-inline">
+	<div class="form-group">
+		<input id="stylistName" name="stylistName" type="text" class="form-control" placeholder="Name of Stylist">
+		<button type="submit" class="btn btn-primary">Add Stylist</button>
+	</div>
+</form>
+
+<!-- Client Stuff -->
+<h3>Add a Client</h3>
+<hr>
+<!-- Form to Add a Client Under a Stylist -->
+<form action="newclient" method="post" class="form-inline">
+	<div class="form-group">
+	<label for="stylistid">Select your Stylist</label>
+	<select id="stylistid" name="stylistid" type="text">
+	#foreach($stylist in $stylists)
+	<option value="$stylist.getId()">$stylist.getName()</option>
+	#end
+	</select>
+	</div>
+	<br>
+	<br>
+
+	<div class="form-group">
+	<input id="clientname" name="clientname" type="text" class="form-control" placeholder="Name">
+	<input id="phone" name="phone" type="text" class="form-control" placeholder="Phone">
+	<input id="email" name="email" type="text" class="form-control" placeholder="Email">
+	</div>
+
+<button type="submit" class="btn btn-info">Add Client</button>
+</form>
+
+
+<h3>All Our Stylists</h3>
+<p>Click on a stylist to view or edit their list of clients</p>
+<br>
+<ul>
+#foreach ($stylist in $stylists)
+<li><a href="/stylist/$stylist.getId()">$stylist.getName()</a></li>
+#end
+</ul>
+
+<!-- <h3>List Of Clients</h3>
+<hr>
+<ul>
+#foreach ($client in $clients)
+<li><a href="/client/$client.getId()">$client.getClientName()</a></li>
+#end
+</ul> -->
+#end

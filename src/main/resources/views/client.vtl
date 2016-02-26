@@ -1,0 +1,17 @@
+<h1>$client.getName()</h1>
+<br>
+<h4>Information</h4>
+<p><strong>Phone:</strong> $client.getPhone()</p>
+<p><strong>Email:</strong> $client.getEmail()</p>
+<p><strong>Stylist:</strong> <a href="/stylist/$stylistid">$client.getStylistName()</a></p>
+<br>
+<a href="/"><button class="btn btn-success">Back to Main Page</button></a>
+<br>
+<br>
+<form class="form-inline" action="/client/$client.getId()/update" method="post">
+  <button type="submit" class="btn btn-warning">Edit this Client's Name</button>
+</form>
+
+<form class="form-inline" action="/restaurant/$restaurant.getId()/delete" method="post">
+  <button type="submit" class="btn btn-danger">Delete this Client</button>
+</form>
